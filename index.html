@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web To Lead Form</title>
+    <link rel="stylesheet" href="index.css"/>
+    <script src="index.js"></script>
+</head>
+<body>
+    <h1>Create Lead</h1>
+    <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DgK0000031py1" method="POST"
+    onsubmit="beforesubmit()">
+    
+    <input type=hidden name="oid" value="00DgK0000031py1">
+    <input type=hidden name="retURL" value="https://orgfarm-e317a370cc-dev-ed.develop.lightning.force.com/lightning/page/home">
+    <input type=hidden name="Date_Lead__c" class="outputdate">
+    
+
+    <label for="first_name">First Name</label><input required="true"  id="first_name" maxlength="40" name="first_name" size="20" type="text" /><br>
+    
+    <label for="last_name">Last Name</label><input required="true"  id="last_name" maxlength="80" name="last_name" size="20" type="text" /><br>
+    
+    <label for="email">Email</label><input required="true"  id="email" maxlength="80" name="email" size="20" type="text" /><br>
+    
+    <label for="email">Date Lead</label>
+    <input required="true" type="date" class="inputdate" />
+
+    <!-- Date Lead:<span class="dateInput dateOnlyInput"><input  id="00NgK00000ymyaQ" name="00NgK00000ymyaQ" size="12" type="text" /></span><br>
+     -->
+    <input class="submit" type="submit" name="submit">
+    
+    </form>
+    
+</body>
+</html>
