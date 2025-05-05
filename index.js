@@ -4,5 +4,5 @@ function beforesubmit(){
     console.log('1'+inputdate.value);
     let formatteddate = new Date(inputdate.value).toLocaleDateString("en-US");
     console.log(formatteddate);
-    outputdate.value=formatteddate; //test
+    outputdate.value=formatteddate; //test1
 }
