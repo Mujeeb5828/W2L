@@ -1,40 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Web To Lead Form</title>
-    <link rel="stylesheet" href="index.css"/>
+    <link rel="stylesheet" href="index.css" />
     <script src="index.js"></script>
     <script src="https://www.google.com/recaptcha/api.js"></script>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Create Lead</h1>
-    <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DgK0000031py1" method="POST"
-    onsubmit="beforesubmit()">
+    <form
+      action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DgK0000031py1"
+      method="POST"
+      onsubmit="beforesubmit(event)"
+    >
+      <input
+        type="hidden"
+        name="captcha_settings"
+        value='{"keyname":"GoogleRecaptcha","fallback":"true","orgId":"00DgK0000031py1","ts":""}'
+      />
+      <input type="hidden" name="oid" value="00DgK0000031py1" />
+      <input
+        type="hidden"
+        name="retURL"
+        value="https://mujeeb5828.github.io/W2L/thanks.html"
+      />
+      <input type="hidden" name="Date_Lead__c" class="outputdate" />
 
-    <input type=hidden name='captcha_settings' value='{"keyname":"GoogleRecaptcha","fallback":"true","orgId":"00DgK0000031py1","ts":""}'>
-    <input type=hidden name="oid" value="00DgK0000031py1">
-    <input type=hidden name="retURL" value="https://mujeeb5828.github.io/W2L/thanks.html">
-    <input type=hidden name="Date_Lead__c" class="outputdate">
-    
+      <label for="first_name">First Name</label
+      ><input
+        required="true"
+        id="first_name"
+        maxlength="40"
+        name="first_name"
+        size="20"
+        type="text"
+      /><br />
 
-    <label for="first_name">First Name</label><input required="true"  id="first_name" maxlength="40" name="first_name" size="20" type="text" /><br>
-    
-    <label for="last_name">Last Name</label><input required="true"  id="last_name" maxlength="80" name="last_name" size="20" type="text" /><br>
-    
-    <label for="email">Email</label><input required="true"  id="email" maxlength="80" name="email" size="20" type="text" /><br>
-    
-    <label for="email">Date Lead</label>
-    <input required="true" type="date" class="inputdate" />
+      <label for="last_name">Last Name</label
+      ><input
+        required="true"
+        id="last_name"
+        maxlength="80"
+        name="last_name"
+        size="20"
+        type="text"
+      /><br />
 
-    <!-- Date Lead:<span class="dateInput dateOnlyInput"><input  id="00NgK00000ymyaQ" name="00NgK00000ymyaQ" size="12" type="text" /></span><br>
+      <label for="email">Email</label
+      ><input
+        required="true"
+        id="email"
+        maxlength="80"
+        name="email"
+        size="20"
+        type="text"
+      /><br />
+
+      <label for="email">Date Lead</label>
+      <input required="true" type="date" class="inputdate" />
+
+      <!-- Date Lead:<span class="dateInput dateOnlyInput"><input  id="00NgK00000ymyaQ" name="00NgK00000ymyaQ" size="12" type="text" /></span><br>
      -->
-    <input class="submit" type="submit" name="submit">
-    
-    <div class="g-recaptcha" data-sitekey="6LfoKTArAAAAAFN5VTHJWEQ1Ud4VOMjFR9YpJ_Je"></div>
-    
+      <input class="submit" type="submit" name="submit" />
+
+      <div
+        class="g-recaptcha"
+        daata-callback="captchaSuccess"
+        data-sitekey="6LfoKTArAAAAAFN5VTHJWEQ1Ud4VOMjFR9YpJ_Je"
+      ></div>
+
     </form>
-    
-</body>
+  </body>
 </html>
